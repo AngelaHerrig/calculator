@@ -41,6 +41,7 @@ const calculate = {
 };
 
 console.log(calculate.add(calculate.pi, 5));
+console.log(calculate.ratio(13, 5, 200));
 
 ///////////////////
 
@@ -56,6 +57,11 @@ const divide = document.getElementById("divide");
 const pi = document.querySelector(".btn--pi");
 const e = document.querySelector(".btn--e");
 const percentage = document.querySelector(".btn--percentage");
+const x = document.querySelector(".btn--x");
+const sqrt = document.querySelector(".btn--sqrt");
+const elevate = document.querySelector(".btn--elevate");
+const ratio = document.querySelector(".btn--ratio");
+const modulation = document.querySelector(".btn--modulation");
 
 let variables = [];
 
@@ -69,6 +75,7 @@ const six = document.getElementById("six");
 const seven = document.getElementById("seven");
 const eigth = document.getElementById("eigth");
 const nine = document.getElementById("nine");
+const comma = document.querySelector(".btn--comma");
 
 const storeNumber = function () {
   if (result.textContent == 0) {
@@ -82,7 +89,6 @@ const storeVar = function () {
   variables.push(Number(result.textContent));
   variables.push(this.textContent);
   result.textContent = 0;
-  console.log(variables);
 };
 reset.addEventListener("click", function () {
   result.textContent = 0;
@@ -99,61 +105,82 @@ six.addEventListener("click", storeNumber);
 seven.addEventListener("click", storeNumber);
 eigth.addEventListener("click", storeNumber);
 nine.addEventListener("click", storeNumber);
+comma.addEventListener("click", storeNumber);
 
 add.addEventListener("click", storeVar);
 substract.addEventListener("click", storeVar);
 multiply.addEventListener("click", storeVar);
 divide.addEventListener("click", storeVar);
 percentage.addEventListener("click", storeVar);
+elevate.addEventListener("click", storeVar);
+modulation.addEventListener("click", storeVar);
 
 check.addEventListener("click", function () {
   variables.push(Number(result.textContent));
-  let safe = 0;
+  let store = 0;
   let currentResult = 0;
   for (let i = 0; i < variables.length; i++) {
     let sign = variables[i];
     let find = i + 1;
-    if (typeof sign == "number" && safe === 0) {
-      safe = variables[i];
+    if (typeof sign == "number" && store === 0) {
+      store = variables[i];
     }
     if (typeof sign !== "number") {
       switch (sign) {
         case "+":
-          currentResult = safe + variables[find];
-          safe = currentResult;
-          result.textContent = safe;
+          currentResult = store + variables[find];
+          store = currentResult;
+          result.textContent = store;
           break;
         case "-":
-          currentResult = safe - variables[find];
-          safe = currentResult;
-          result.textContent = safe;
+          currentResult = store - variables[find];
+          store = currentResult;
+          result.textContent = store;
           break;
         case "*":
-          currentResult = safe * variables[find];
-          safe = currentResult;
-          result.textContent = safe;
+          currentResult = store * variables[find];
+          store = currentResult;
+          result.textContent = store;
           break;
         case "/":
-          currentResult = safe / variables[find];
-          safe = currentResult;
-          result.textContent = safe;
+          currentResult = store / variables[find];
+          store = currentResult;
+          result.textContent = store;
           break;
         case "%":
-          currentResult = (safe * 100) / variables[find];
-          safe = currentResult;
-          result.textContent = safe;
+          currentResult = (store * 100) / variables[find];
+          store = currentResult;
+          result.textContent = store;
+          break;
+        case "elev":
+          currentResult = calculate.elevate(store, variables[find]);
+          store = currentResult;
+          result.textContent = store;
+          break;
+        case "mod":
+          currentResult = calculate.modulation(store, variables[find]);
+          store = currentResult;
+          result.textContent = store;
           break;
       }
     }
   }
+  console.log(variables);
+  variables = [];
 });
 
 pi.addEventListener("click", function () {
   result.textContent = calculate.pi;
-  variables.push(calculate.pi);
 });
 
 e.addEventListener("click", function () {
   result.textContent = calculate.e;
-  variables.push(calculate.e);
+});
+
+x.addEventListener("click", function () {
+  result.textContent = result.textContent * result.textContent;
+});
+
+sqrt.addEventListener("click", function () {
+  result.textContent = calculate.sqrt(result.textContent);
 });
