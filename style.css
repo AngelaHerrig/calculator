@@ -1,0 +1,89 @@
+.container {
+    width: 450px;
+    padding: 20px 0 20px 20px;
+    background-color: cornflowerblue;
+    display: grid;
+    grid-template-columns: 100px 100px 50px 50px 50px 50px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.result {
+    grid-area: 1/1/2/7;
+    text-align: right;
+    border: 1px black solid;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.btn--del {
+    grid-area: 2/3/3/4;
+}
+
+.btn--check {
+    grid-area: 6/5/7/7;
+}
+
+#add {
+    grid-area: 5/6/6/7;
+
+}
+
+#substract {
+    grid-area: 4/6/5/7;
+}
+
+#multiply {
+    grid-area: 3/6/4/7;
+}
+
+#divide {
+    grid-area: 2/6/3/7;
+}
+
+.btn--comma {
+    grid-area: 6/4/7/5;
+}
+
+#zero {
+    grid-area: 6/3/7/4;
+}
+
+#one {
+    grid-area: 5/3/6/4;
+}
+
+#two {
+    grid-area: 5/4/6/5;
+}
+
+#three {
+    grid-area: 5/5/6/6;
+}
+
+#four {
+    grid-area: 4/3/5/4;
+}
+
+#five {
+    grid-area: 4/4/5/5;
+}
+
+#six {
+    grid-area: 4/5/5/6;
+}
+
+#seven {
+    grid-area: 3/3/4/4;
+}
+
+#eigth {
+    grid-area: 3/4/4/5;
+}
+
+#nine {
+    grid-area: 3/5/4/6;
+}
