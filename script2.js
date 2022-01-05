@@ -128,27 +128,27 @@ check.addEventListener("click", function () {
     if (typeof sign !== "number") {
       switch (sign) {
         case "+":
-          currentResult = store + variables[find];
+          currentResult = calculate.add(store, variables[find]);
           store = currentResult;
           result.textContent = store;
           break;
         case "-":
-          currentResult = store - variables[find];
+          currentResult = calculate.substract(store, variables[find]);
           store = currentResult;
           result.textContent = store;
           break;
         case "*":
-          currentResult = store * variables[find];
+          currentResult = calculate.multiply(store, variables[find]);
           store = currentResult;
           result.textContent = store;
           break;
         case "/":
-          currentResult = store / variables[find];
+          currentResult = calculate.divide(store, variables[find]);
           store = currentResult;
           result.textContent = store;
           break;
         case "%":
-          currentResult = (store * 100) / variables[find];
+          currentResult = calculate.percentage(store, variables[find]);
           store = currentResult;
           result.textContent = store;
           break;
