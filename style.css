@@ -22,6 +22,7 @@ body {
 }
 
 .result {
+    height: 1rem;
     grid-area: 1/1/2/7;
     text-align: right;
     background-color: black;

@@ -88,7 +88,7 @@ const storeNumber = function () {
 const storeVar = function () {
   variables.push(Number(result.textContent));
   variables.push(this.textContent);
-  result.textContent = 0;
+  result.textContent = "";
 };
 reset.addEventListener("click", function () {
   result.textContent = 0;
