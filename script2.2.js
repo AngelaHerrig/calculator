@@ -74,12 +74,12 @@ function calculateEvent(e) {
         switch (e.target.textContent) {
           case "PI":
             secondVariable = calculate.pi;
-            output.textContent = firstVariable;
+            output.textContent = secondVariable;
             break;
 
           case "e":
             secondVariable = calculate.e;
-            output.textContent = firstVariable;
+            output.textContent = secondVariable;
             break;
         }
       } else if (secondVariable == 0) {
